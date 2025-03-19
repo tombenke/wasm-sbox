@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <script src="wasm_exec_go.js"></script>
+        <script>
+            const go = new Go();
+            WebAssembly.instantiateStreaming(fetch("export_js_go.wasm"), go.importObject).then((result) => {
+                go.run(result.instance);
+                var addResult = add(42, 24)
+                console.log('add result: ', addResult)
+                var subResult = sub(42, 24)
+                console.log('sub result: ', subResult)
+                var mulResult = mul(42, 24)
+                console.log('mul result: ', mulResult)
+            });
+        </script>
+    </head>
+    <body></body>
+</html>

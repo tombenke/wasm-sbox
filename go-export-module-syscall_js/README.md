@@ -1,9 +1,9 @@
-# go-export-module
+# go-export-module-syscall_js
 
-Exports some go functions, and build as a module, then call the functions in several environments:
-in a runner (e.g. [wasmtime](https://wasmtime.dev/)), in a Node.js application, in a HTML page.
+Exports some go functions that uses the [`syscall/js`](https://pkg.go.dev/syscall/js) Go package, and build as a module,
+then call the functions in a Node.js application, and in a HTML page.
 
-The [export.go](export.go) exports some simple functions, that are exported,
+The [export_js_.go](export_js_.go) exports some simple functions, that are exported,
 and are reacheable to an external Wasm caller.
 
 IMPORTANT NOTE:
@@ -33,18 +33,8 @@ Build the Wasm files:
 
 The results will be:
 
-- `export_wasi_go.wasm`,
-- `export_wasi_tinygo.wasm`.
-
-Call the exported function with wasmtime both with the go and the tinygo versions:
-
-```bash
-wasmtime run --invoke add export_wasi_go.wasm 42 24
-66
-
-wasmtime run --invoke add export_wasi_tinygo.wasm 42 24
-66
-```
+- `export_js_go.wasm`,
+- `export_js_tinygo.wasm`.
 
 Use the built modules in a Node.js application:
 
