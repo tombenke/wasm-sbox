@@ -11,6 +11,9 @@ programming languages, and how to use the created Wasm binaries within different
 - [c-emscripten-hello-world](c-emscripten-hello-world):
   Run a simple "Hello World" application in a HTML page that is written in C.
 
+- [go-browser-hello-world](go-browser-hello-world):
+  A WebAssembly application written in Go, that applies the [`syscall/js`](https://pkg.go.dev/syscall/js) package to use the DOM API.
+
 - [go-export-module](go-export-module):
   Exports some go functions, and build as a module, then call the functions in several environments:
   in a runner (e.g. [wasmtime](https://wasmtime.dev/)), in a Node.js application, in a HTML page.
