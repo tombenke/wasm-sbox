@@ -43,6 +43,12 @@ programming languages, and how to use the created Wasm binaries within different
 - `server.go`:
   This is a very simple HTTP file server that serves the examples that need a server to make the HTML pages working.
 
+### UI
+
+- [go-gooroo](go-gooroo):
+  A [Gooroo](https://github.com/Matbabs/Gooroo) application.
+
+
 ## References
 
 - [The ByteCode Alliance](https://bytecodealliance.org/)
