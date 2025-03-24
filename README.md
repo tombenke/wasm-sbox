@@ -13,7 +13,7 @@ programming languages, and how to use the created Wasm binaries within different
 
 - [go-browser-hello-world](go-browser-hello-world):
   A WebAssembly application written in Go, that applies the [`syscall/js`](https://pkg.go.dev/syscall/js) package to use the DOM API.
-
+    
 - [go-export-module](go-export-module):
   Exports some go functions, and build as a module, then call the functions in several environments:
   in a runner (e.g. [wasmtime](https://wasmtime.dev/)), in a Node.js application, in a HTML page.
@@ -47,6 +47,9 @@ programming languages, and how to use the created Wasm binaries within different
 
 - [go-gooroo](go-gooroo):
   A [Gooroo](https://github.com/Matbabs/Gooroo) application.
+
+- [go-dom-tts](go-dom-tts):
+  Example with HTML DOM API and text-to-speech API.
 
 
 ## References

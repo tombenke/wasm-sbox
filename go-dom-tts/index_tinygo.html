@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <title>Example with HTML DOM and text-to-speech</title>
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="master.css" />
+    <script src="wasm_exec_tinygo.js"></script>
+    <script>
+      const go = new Go();
+      WebAssembly.instantiateStreaming(
+        fetch("main_tinygo.wasm"),
+        go.importObject
+      ).then((result) => {
+        go.run(result.instance);
+      });
+    </script>
+  </head>
+  <body></body>
+</html>
