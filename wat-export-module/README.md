@@ -31,3 +31,18 @@ Start the HTTP server:
 
 Open the  [http://localhost:8080](http://localhost:8080) URL link in a browser, then see the developer console (`Ctrl+Shift+J`).
 
+
+Run with external runtime:
+
+```bash
+
+  $ wasmtime --invoke add math.wasm 42 24
+  66
+
+  $ wasmtime --invoke square math.wasm 2
+  4
+
+  $ wasmtime --invoke subtract math.wasm 42 24
+  18
+
+```
