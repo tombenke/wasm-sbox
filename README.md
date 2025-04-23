@@ -51,6 +51,8 @@ programming languages, and how to use the created Wasm binaries within different
 - [go-dom-tts](go-dom-tts):
   Example with HTML DOM API and text-to-speech API.
 
+- [go-graphviz](go-graphviz):
+  Draw a graph using Golang and Graphviz in an HTML page.
 
 ## References
 

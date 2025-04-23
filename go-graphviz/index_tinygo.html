@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>GraphViz WASM</title>
+
+    <script src="wasm_exec_tinygo.js"></script>
+
+    <script type="module">
+        import { Graphviz } from "https://cdn.jsdelivr.net/npm/@hpcc-js/wasm/dist/index.js";
+
+        if (Graphviz) {
+            const graphviz = await Graphviz.load();
+
+            window.drawGraph = function drawGraph(graph) {
+                const svg = graphviz.layout(graph, "svg", "dot");
+                document.getElementById("GRAPH").innerHTML = svg;
+            }
+
+            const go = new Go();
+            WebAssembly.instantiateStreaming(
+              fetch("main_tinygo.wasm"),
+              go.importObject
+            ).then((result) => {
+              go.run(result.instance);
+            });
+
+        } 
+
+    </script>
+</head>
+<body><div id="GRAPH"></div></body>
+</html>

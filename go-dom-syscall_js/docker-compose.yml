@@ -1,0 +1,22 @@
+version: '3.8'
+
+networks:
+  nats-network:
+    driver: bridge
+    name: nats-network
+
+services:
+  nats:
+    container_name: nats
+    restart: unless-stopped
+    image: nats:latest
+    command: -p 4222 --cluster_name "nats-cluster" -m 8222 -js -V
+    ports:
+      - 4222:4222
+      - 6222:6222
+      - 8222:8222
+    networks:
+      nats-network:
+        aliases:
+          - nats
+
